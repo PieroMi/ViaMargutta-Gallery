@@ -1,0 +1,502 @@
+<?php
+
+$message_sent = false;
+
+if(isset($_POST['email']) && $_POST['email' != '']){
+
+    if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+
+
+        $userName = $_POST['name'];
+        $userPhone = $_POST['phone'];
+        $userEmail = $_POST['email'];
+        $message = $_POST['message'];
+
+        $to = "oreipieroo@gmail.com";
+        $body = "";
+
+        $body .="From: " .$userName. "\r\n";
+        $body .= "Phone: " .$userPhone. "\r\n";
+        $body .="Email: " .$userEmail. "\r\n";
+        $body .="Message: " .$message. "\r\n";
+            
+        mail($to,$message,$body);
+
+        $message_sent = true;
+    }
+    else{
+        $invalid = "form-invalid";    
+    }
+
+
+
+
+}
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Miranda Neira Gallery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+   
+    <script src="js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+</head>
+
+<body>
+<?php 
+    if($message_sent):
+      
+    ?>
+
+        <h3>Thanks, we'll be in touch</h3>
+
+    <?php
+    else:
+    ?>
+<!--SOCIAL ICONS-->
+<div class="container-fluid info p-3" id="top-icons">
+    <div class="row height-90 align-items-center justify-content-center">
+        <div class="col d-flex justify-content-between align-items-baseline flex wrap">
+            <div class="info-icons p-2">
+                <a href="https://www.facebook.com/viamarguttagallery/" class="mr-2 facebook-color "><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/viamarguttaec/" class="mr-2 instagram-color"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://wa.link/s1qb4j" class="mr-2 whatsapp-color"><i class="fab fa-whatsapp fa-2x"></i></a>
+            </div>
+            <h2 class="address-color p-2 text-capitalize">Wine · Gallery</h2>
+        </div>
+    </div>
+
+</div>
+<!--END OF SOCIAL ICONS-->   
+
+<!--HEADER SECTION-->
+<header id="header">
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="banner text-center">
+                <h1 class="display-1 text-capitalize mx-auto">
+                    <strong class="primary-color">Luis Miranda Neira</strong>
+                </h1>
+                <a href="#art-piece" class="btn main-btn reserve-btn my-4 text-capitalize primary-color">Art Collection</a>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<a href="#aboutmargutta" class="btn header-link primary-color"><i class="fas fa-arrow-down"></i></a>
+</header>
+    <!-----NAVBAR-->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#" class="navbar-brand text-uppercase">Via Margutta Gallery</a>
+        <button class="navbar-toggler"
+        type="button" data-toggle="collapse" data-target="#myNavbar">
+        <div class="toggler-btn">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+        
+        </button>
+        <!----LINK-->
+        <div class="collapse navbar-collapse text-center" id="myNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link text-capitalize">About</a>
+                </li>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="#art-piece" class="nav-link text-capitalize">Collection</a>
+                    </li>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a href="#aboutmargutta" class="nav-link text-capitalize">The Gallery</a>
+                        </li>
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link text-capitalize">Contact</a>
+                            </li>
+    
+
+
+            </ul>
+
+
+
+        </div>
+
+
+    </nav>
+    <!----END OF NAVBAR-->
+    
+    
+<!--SECTION OF ABOUT-->
+
+<section id="about" class="py-5 my-5">
+    <p class="about-color text-center">About</p>
+    <div class="container1">
+            <div class="col-md-6">
+                <!--title-->
+                <!--end of title-->
+                <!--about paragraph-->
+                <div class="about-paragraph d-flex justify-content-between my-3 p-3">
+                    <div class="about-paragraph-text">
+                        <h2 class="third-color">Luis Miranda Neira</h2>
+                        <h4 class="secondary-color">Luis Miranda Neira (1932-2016), ecuatoriano. Miranda Neira fue un pintor figurativo dedicado, sobre todo, a los personajes, paisajes y escenas propias de su país. Sus cuadros están realizados con una bella sencillez y un claro concepto de la composición.</h4>
+                        <img src="/images/fotodeluniverso.jpg" alt="" width="400px">
+                    </div>                   
+                    
+                </div>
+                <div class="about-paragraph d-flex justify-content-between my-3 p-3">
+                    <div>
+                        <h2 class="third-color">Via Margutta</h2>
+                        <h4 class="secondary-color"> Via Margutta es una calle ubicada en Roma, Italia. Está calle es ubicada a 5 minutos de la Escuela de Bellas Artes en cual fue la universidad donde estudió y obtuvo su profesión el pintor Luis Miranda Neira. Vía Margutta es considerada la calle de los artistas igual que la calle Numa Pompilio LLona en el Barrio Las Peñas. Luis Miranda paso su juventud en el Barrio Las Peñas exhibiendo sus obras y después terminó viviendo en #ViaMargutta estudiando en unas de las escuelas más prestigiosas del país. Barrio Las Peñas #ViaMargutta tienen mucho en común pero más que todo, los dos fueron lugares muy especial para el pintor #LuisMirandaNeira</h1>
+                            
+                    </div>                
+
+                <!--end of about paragraph-->               
+            </div><div class="row">
+                                <div class="column">
+                                  <img src="/images/viamarguttaitaly.jpg" alt="" width="100%">
+                                </div>
+                                <div class="column">
+                                  <img src="/images/laspenas2.jpg" alt="" width="100%" height="260px">
+                                </div>
+                              </div>
+            <!--end of first column-->
+            <div class="col-md-6"></div>
+        </div>
+
+</section>    
+
+<!--ART PHOTOS-->
+<p class="gallery-color text-center">Collection</p>
+<section class="py-5" id="art-piece">
+    <div class="container my-5">
+        <div class="row parent-container">
+            <!--art-collection-->
+            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+               <div class="item-container">
+                    <img src="/images/cuadrobalsas.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                    <a href="/images/cuadrobalsas.jpg">
+                    <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                    
+                    </a>
+                </div>
+                
+            </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/cuadro1.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/cuadro1.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/pescadores2.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/pescadores2.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/bandpaint.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/bandpaint.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/cocoapaint.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/cocoapaint.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/chicasdelmetro.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/chicasdelmetro.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/chicasdulces.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/chicasdulces.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/bananafield.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/bananafield.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+             <!--art-collection-->
+             <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                <div class="item-container">
+                     <img src="/images/cuadrospescadores.jpg" class="img-fluid img-thumbnail item-img" alt="Art Collection">
+                     <a href="/images/cuadrospescadores.jpg">
+                     <h1 class="text-uppercase text-center item-link px-10">art collection</h1>
+                     
+                     </a>
+                 </div>
+                 
+             </div>
+
+
+
+        </div>
+    </div>
+
+
+
+</section>
+    <!--end of ART PHOTOS-->
+
+
+        <!--about margutta-->
+        <section id="aboutmargutta" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 my-4">
+                        <h1 class="text-uppercase display-3">The Gallery</h1>
+                        <h2 class="secondary-color">Via Margutta Gallery es una galeria de arte & una vinoteca</h2>
+                        <a href="https://www.instagram.com/viamarguttaec/" class="btn main-btn my-4 text-capitalize">learn more</a>                    
+                    </div>
+                    <div class="col-md-6 about-picture my-4 d-none d-lg-block">
+                        <img src="/images/vinomiranda.jpg" alt="menu" class="img-1 img-thumbnail about-image">
+                        <img src="/images/firework.jpg" alt="winemenu" class="img-2 img-thumbnail about-image">
+                        <img src="/images/tatuncorner1.png" alt="winemenu2" class="img-3 img-thumbnail about-image">
+                        <img src="/images/vinomiranda2.jpg" alt="rack" class="img-4 img-thumbnail about-image">
+                        <img src="/images/vinoyrosa.jpg" alt="corner" class="img-5 img-thumbnail about-image">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    <!--end of about margutta-->
+
+    <!--Start of Collections-->
+    <section id="collection" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!--all art-->
+            <div class="col-9 col-sm-6 col-lg-4 mx auto my-4">
+                <div class="card">
+                    <img src="/images/firework.jpg" alt="" class="card-img-top">
+                </div>
+            </div>
+            <!--end of art-->
+            <!--all art-->
+            <div class="col-9 col-sm-6 col-lg-4 mx auto my-4">
+                <div class="card">
+                    <img src="/images/winecollection.JPG" alt="" class="card-img-top">
+                </div>
+            </div>
+            <!--end of art-->
+            <!--all art-->
+            <div class="col-9 col-sm-6 col-lg-4 mx auto my-4">
+                <div class="card">
+                    <img src="/images/vinomiranda2.jpg" alt="" class="card-img-top">
+                </div>
+            </div>
+            <!--end of art-->
+            <!--all art-->
+            <div class="col-9 col-sm-6 col-lg-4 mx auto my-4">
+                <div class="card">
+                    <img src="/images/empanadas.jpg" alt="" class="card-img-top">
+                </div>
+            </div>
+            <!--end of art-->
+            <!--all art-->
+            <div class="col-9 col-sm-6 col-lg-4 mx auto my-4">
+                <div class="card">
+                    <img src="/images/background2.jpg" alt="" class="card-img-top">
+                </div>
+            </div>
+            <!--end of art-->
+            <!--all art-->
+            <div class="col-9 col-sm-6 col-lg-4 mx auto my-4">
+                <div class="card">
+                    <img src="/images/winerack.jpg" alt="" class="card-img-top">
+                </div>
+            </div>
+            <!--end of art-->
+            </div>
+        </div>
+    </section>
+    <!--End of collection of art-->
+  
+        <!--CONTACT SECTION-->
+        <section id="contact">
+            <div class="container-fluid no-padding">
+                <form action="contact.php" method="POST"></form>
+                <div class="row">
+                  <div class="col-md-6 my-3">
+                    <div class="embed-responsive embed-responsive-21by9 height-60">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.9247822522034!2d-79.87644358570014!3d-2.1822370378740583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6db12e66be59%3A0x5644904acac32451!2sVia%20Margutta%20Gallery!5e0!3m2!1sen!2sus!4v1601413255297!5m2!1sen!2sus" width="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                  </div>
+                  <div class="col-md-6 my-3 align-self-center">
+                    <div class="card text-center">
+                        <div class="card-header">                            
+                            <h1>Contact List</h1>
+                        </div>
+                        <div class="card-body">
+                            
+                                <!--input group-->
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-text">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input name="name" type="text" id="text" class="form-control form-control-lg" placeholder="Enter your name here" tabindex="1" required>
+
+                                </div>
+                                <!--input group-->
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-phonr">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                    </div>
+                                    <input name="phone" type="text" id="phone" class="form-control form-control-lg" placeholder="Enter your phone here" tabindex="2" required>
+
+                                </div>
+                                <!--input group-->
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-email">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                    <input name="email" type="email" id="email" class="form-control form-control-lg" placeholder="Enter your email here" tabindex="3" required>
+
+                                </div>
+                                
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-message">                                            
+                                        </span>
+                                    </div>
+                                    <input name="message" class="form-control form-control-lg" placeholder="Enter your message here" row="4" tabindex="4" required></input>
+
+                                </div>
+
+                                <button type="submit" class="btn-block btn-lg text-uppercase contact-btn"><i class="far fa-hand-point-right mr-2"></i> click here</button>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                  </div>
+                  
+
+                </div>
+                
+
+            </div>
+        </section>
+
+
+
+
+
+        <!--END OF CONTACT SECTION-->
+   
+
+        <div class="container-fluid info1 p-3">
+            <div class="row height-90 align-items-center justify-content-center">
+                <div class="col d-flex justify-content-between align-items-baseline flex wrap">
+                    <div class="info-icons p-2">
+                        <a href="https://www.facebook.com/viamarguttagallery/" class="mr-2 facebook-color "><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.instagram.com/viamarguttaec/" class="mr-2 instagram-color"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://wa.link/s1qb4j" class="mr-2 whatsapp-color"><i class="fab fa-whatsapp fa-2x"></i></a>
+                    </div>
+                    <h2 class="address-color p-2 text-capitalize">&copy;copyright 2020</h2>
+                </div>
+            </div>
+        
+        </div>
+        <a href="#top-icons" id="back-to-top" class="p-1"><i class="fas fa-arrow-up primary-color fa-3x"></i></a>
+
+    
+
+
+
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/jquery.ripples-min.js"></script>
+   
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+          
+    <script src="js/script.js"></script>
+
+<?php
+endif;
+?>
+</body>
+
+</html>
